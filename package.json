@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "bourbon": "^4.2.7",
-        "style-loader": "^4.0.0"
+        "locomotive-scroll": "^4.1.4",
+        "style-loader": "^4.0.0",
+        "vanilla-tilt": "^1.8.1"
     }
 }

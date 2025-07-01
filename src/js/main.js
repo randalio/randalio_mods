@@ -1,3 +1,7 @@
+// import vanilla tilt
+import 'vanilla-tilt';
+import LocomotiveScroll from 'locomotive-scroll';
+
 class RandalIO_Mods_Main_JS {
 
     constructor() {
@@ -10,10 +14,10 @@ class RandalIO_Mods_Main_JS {
           console.log('randalio mods JS initialized');
 
           this.initSwitcher();
-
-
         });
     }
+
+
 
     initSwitcher() {
 
@@ -42,6 +46,8 @@ class RandalIO_Mods_Main_JS {
       });
 
     } // initSwitcher
+
+
 
 
 

@@ -1,0 +1,301 @@
+.switcher-panel{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    transition: opacity 1.5s ease, with 0s ease 1.5s;
+
+    &.active{
+        opacity: 1;
+        width:auto;
+        height: auto;
+    }
+
+    @media screen and (max-width: 781px){
+        display: none;
+    }
+
+}
+
+.hide-above-781{
+    @media screen and (min-width: 781px){
+        display: none;
+    }
+}
+
+
+.stack3d{
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
+	bottom: -40px;
+
+	& .axil-icon-box{
+		pointer-events: none;
+		&>*{
+			pointer-events: all;
+		}
+
+		&>.tilt-box{
+			min-width: 8rem;
+		}
+	}
+
+	& .axil-icon-box + .axil-icon-box{
+		top:40%;
+	}
+
+	& .axil-icon-box + .axil-icon-box + .axil-icon-box{
+		top:70%;
+	}
+}
+
+.stack3d > *:not(:first-child){
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.stack3d > *:nth-child(1){
+	transform: translateZ(-40px);
+}
+.stack3d > *:nth-child(2){
+	transform: translateZ(20px);
+}
+.stack3d > *:nth-child(3){
+	transform: translateZ(40px);
+}
+.stack3d > *:nth-child(4){
+	transform: translateZ(60px);
+}
+.stack3d > *:nth-child(5){
+	transform: translateZ(80px);
+}
+.stack3d > *:nth-child(6){
+	transform: translateZ(100px);
+}
+
+
+
+
+@media (max-width: 768px){
+	[data-tilt]{
+		transform: inherit !important;
+	}
+}
+
+
+
+.axil-columns{
+    justify-content: space-between;
+  }
+  
+  /*====================
+  Service Styles 
+  ======================*/
+  .axil-service {
+      margin-top: 60px;
+    }
+    @media only screen and (max-width: 767px) {
+      .axil-service {
+        margin-top: 30px;
+      }
+    }
+    
+    /*---------------------------
+        Single Service  
+    ---------------------------*/
+    .axil-service {
+      position: relative;
+      background: #ffffff;
+  
+      &:hover{
+          &::after{
+             
+              opacity: 1;
+          }
+      }
+  
+      &::after{
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          top: 1.5rem;
+          left: -1.5rem;
+          border: 4px solid var(--wp--preset--color--contrast);
+          position: absolute;
+          opacity: 0;
+          z-index: -3;
+          transition: opacity 0.2s ease-in-out;
+          border-radius: 2px;
+          transform: translateZ(-100px);
+          filter: blur(0.5px);
+      }
+  
+  
+      & .icon-container{
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: 60px;
+        aspect-ratio: 1;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        transform:translateZ(50px);
+      }
+  
+  
+      &.axil-service--blog{
+  
+        & .inner {
+          padding-top: 0px;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-bottom: 50px;
+          position: relative;
+          background-color: #ffffff;
+  
+          & > *:not(.wp-block-post-featured-image){
+            padding: 0 2.5rem;
+          }
+  
+  
+          & h2 > a{
+            color: var(--wp--preset--color--contrast);
+          }
+  
+          & a.wp-block-post-excerpt__more-link{
+            background-color: #778DFD;
+            color:#fff;
+            text-decoration: none;
+            padding: 0.5rem 2rem;
+            border-radius: 2rem;
+            &:hover{
+              background-color: #35359A;
+            }
+          }
+  
+        }
+  
+      }
+  
+  
+  
+    }
+    @media only screen and (max-width: 767px) {
+      .axil-service {
+        background: #f7f7f7;
+      }
+    }
+    .axil-service:hover {
+      background: transparent;
+    }
+    .axil-service::before {
+      width: 92%;
+      height: 92%;
+      left: -20px;
+      bottom: -20px;
+      background: rgba(0, 2, 72, 0.1);
+      content: "";
+      position: absolute;
+      z-index: -1;
+      transform-style: preserve-3d;
+      transform: rotateY(-10deg);
+      filter: blur(50px);
+      opacity: 1;
+      transition: all 0.7s;
+    }
+    @media only screen and (max-width: 767px) {
+      .axil-service::before {
+        display: none;
+      }
+    }
+    .axil-service .inner {
+      padding-top: 60px;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 60px;
+      position: relative;
+      background-color: #ffffff;
+    }
+    @media only screen and (max-width: 767px) {
+      .axil-service .inner {
+        padding: 30px 20px;
+      }
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .axil-service .inner {
+        padding: 34px 20px;
+      }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .axil-service .inner {
+        padding: 25px 15px;
+      }
+    }
+    .axil-service .inner::after {
+      background: #ffffff;
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      -webkit-transform: perspective(500px) rotateY(-5deg);
+      transform: perspective(500px) rotateY(-5deg);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    @media only screen and (max-width: 767px) {
+      .axil-service .inner::after {
+        background: #f7f7f7;
+        transform: perspective(0) rotateY(0deg);
+      }
+    }
+    .axil-service .inner::before {
+      -webkit-transform: perspective(500px) rotateY(-5deg);
+      transform: perspective(500px) rotateY(-5deg);
+      position: absolute;
+      width: calc(100% - 5px);
+      height: calc(100% - 10px);
+      top: 32px;
+      content: "";
+      border: 4px solid #000345;
+      z-index: -1;
+      right: 32px;
+      transition: all 0.4s;
+      opacity: 1;
+      visibility: hidden;
+      box-shadow: 0 0 1px transparent;
+      transition-delay: 0.2s;
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .axil-service .inner::before {
+        width: calc(100% - 15px);
+        height: calc(100% - 15px);
+      }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .axil-service .inner::before {
+        width: calc(100% - 15px);
+        height: calc(100% - 15px);
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .axil-service .inner::before {
+        width: calc(100% - 15px);
+        height: calc(100% - 15px);
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      .axil-service .inner::before {
+        display: none;
+      }
+    }
+  
