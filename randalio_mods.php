@@ -34,7 +34,7 @@ class RandalIO_Theme_Mods {
 
         //enqueue admin styles
         function enqueue_randalio_mods_admin_styles() {
-            wp_enqueue_style('randalio-mods-admin', plugin_dir_url(__FILE__) . '/dist/styles/admin.min.css', array(),  time() );
+            wp_enqueue_style('randalio-mods-admin', plugin_dir_url(__FILE__) . '/dist/css/admin.min.css', array(),  time() );
         }
         add_action('admin_enqueue_scripts', 'enqueue_randalio_mods_admin_styles');
 
