@@ -25,6 +25,16 @@ class RandalIO_Theme_Mods {
      */
     public function init() {
 
+        add_action('wp_body_open', function() {
+	
+            echo '<div data-scroll>';
+            echo '  <div data-scroll-container>';
+        });
+        add_action('wp_footer', function() {
+            echo '  </div>';
+            echo '</div>';
+        });
+
         //enqueue randalio-mods.css
         function enqueue_randalio_mods_styles() {
             wp_enqueue_style('randalio-mods', plugin_dir_url(__FILE__) . '/dist/css/main.min.css', array(), time() );

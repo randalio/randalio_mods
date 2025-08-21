@@ -14,6 +14,16 @@ class RandalIO_Mods_Main_JS {
           console.log('randalio mods JS initialized');
 
           this.initSwitcher();
+
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    this.initLocoScroll();
+                }, 500); // Delay to ensure all elements are loaded
+                
+            }
+            );
+        
+
         });
     }
 
@@ -46,6 +56,25 @@ class RandalIO_Mods_Main_JS {
       });
 
     } // initSwitcher
+
+
+    initLocoScroll(){
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'), // Target element for scrolling
+            smooth: true, // Enable smooth scrolling
+            lerp: 0.15, // Linear interpolation value - controls smoothness/responsiveness
+            multiplier: 0.8, // Adjust scroll speed
+            scrollFromAnywhere: true, // Allow scrolling to start from any point
+            smartphone: {
+                smooth: true, // Enable smooth scrolling on smartphones
+                multiplier: 1 // Default scroll speed for smartphones
+            },
+            tablet: {
+                smooth: true, // Enable smooth scrolling on tablets
+                multiplier: 1 // Default scroll speed for tablets
+            }
+        });
+    }
 
 
 

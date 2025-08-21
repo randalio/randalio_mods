@@ -1,6 +1,83 @@
 /*!*************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
   \*************************************************************************************************************/
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+html.has-scroll-dragging {
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+[data-scroll-direction=horizontal] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+[data-scroll-direction=horizontal] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+[data-scroll-direction=horizontal] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: grabbing;
+}
+[data-scroll-direction=horizontal] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
 .switcher-panel {
   opacity: 0;
   width: 0;
@@ -32,6 +109,29 @@
   transform: perspective(1000px);
   bottom: -40px;
 }
+.stack3d > *:not(:first-child) {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.stack3d > *:nth-child(1) {
+  transform: translateZ(-40px);
+}
+.stack3d > *:nth-child(2) {
+  transform: translateZ(20px);
+}
+.stack3d > *:nth-child(3) {
+  transform: translateZ(40px);
+}
+.stack3d > *:nth-child(4) {
+  transform: translateZ(60px);
+}
+.stack3d > *:nth-child(5) {
+  transform: translateZ(80px);
+}
+.stack3d > *:nth-child(6) {
+  transform: translateZ(100px);
+}
 .stack3d .axil-icon-box {
   pointer-events: none;
 }
@@ -48,34 +148,206 @@
   top: 70%;
 }
 
-.stack3d > *:not(:first-child) {
-  position: absolute;
-  top: 0;
-  left: 0;
+#contact-form form.wpcf7-form {
+  font-family: var(--font-lato);
+}
+#contact-form form.wpcf7-form p {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; /* Add this to allow items to wrap when needed */
+  gap: 1rem;
+}
+#contact-form form.wpcf7-form p label {
+  margin-bottom: -0.5rem;
+  font-weight: 900;
+  font-size: 1.5rem;
+  width: 100%;
+  flex: 1;
+}
+#contact-form form.wpcf7-form p span {
+  display: flex;
+  flex-grow: 1;
+  min-width: 0; /* This ensures spans can shrink below content size */
+  width: 0; /* This helps with equal distribution and prevents overflow */
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+#contact-form form.wpcf7-form p span input:not(input[type=submit]), #contact-form form.wpcf7-form p span textarea {
+  width: 100%;
+  font-size: var(--wp--preset--font-size--medium) !important;
+  line-height: 2em;
+  font-family: var(--font-lato);
+  padding: 0.5rem;
+  outline: unset;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  border: 1px solid #dddddd;
+  padding-left: 1.25rem;
+  transition: box-shadow 0.25s ease;
+}
+#contact-form form.wpcf7-form p span input:not(input[type=submit]):focus, #contact-form form.wpcf7-form p span textarea:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#contact-form form.wpcf7-form p span textarea {
+  padding-top: 1rem;
+  resize: none;
+  margin-bottom: 1rem;
+}
+#contact-form form.wpcf7-form p input[type=submit] {
+  width: auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#contact-form form.wpcf7-form p input[type=submit]:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#contact-form form.wpcf7-form p .wp-block-button__link:hover {
+  background-color: rgb(43.6086956522, 77.8043478261, 251.8913043478) !important;
 }
 
-.stack3d > *:nth-child(1) {
-  transform: translateZ(-40px);
+.wpcf7 {
+  max-width: 880px;
+}
+.wpcf7-form-control-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wpcf7 input[type=submit], .wpcf7 button.cf7mls_back.action-button, .wpcf7 button.cf7mls_next {
+  background-color: var(--wp--preset--color--accent-3);
+  border-width: 0;
+  color: var(--wp--preset--color--base);
+  font-family: inherit;
+  font-size: clamp(0.907rem, 0.907rem + (1vw - 0.2rem) * 0.697, 1.36rem);
+  line-height: inherit;
+  padding-top: 1rem !important;
+  padding-right: 2.25rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 2.25rem !important;
+  text-decoration: none;
+  border-radius: 3rem !important;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+.wpcf7 input[type=submit]:hover, .wpcf7 button.cf7mls_back.action-button:hover, .wpcf7 button.cf7mls_next:hover {
+  cursor: pointer;
+}
+.wpcf7 input[type=submit] {
+  margin-top: unset !important;
+  margin-bottom: unset !important;
 }
 
-.stack3d > *:nth-child(2) {
-  transform: translateZ(20px);
+fieldset.fieldset-cf7mls {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+fieldset.fieldset-cf7mls:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+fieldset.fieldset-cf7mls .wpcf7-spinner {
+  display: none;
 }
 
-.stack3d > *:nth-child(3) {
-  transform: translateZ(40px);
+body .challenges-form p:empty {
+  display: none;
 }
-
-.stack3d > *:nth-child(4) {
-  transform: translateZ(60px);
+body .challenges-form.is-layout-constrained {
+  max-width: unset;
 }
-
-.stack3d > *:nth-child(5) {
-  transform: translateZ(80px);
+body .challenges-form.is-layout-constrained > * {
+  max-width: unset;
 }
-
-.stack3d > *:nth-child(6) {
-  transform: translateZ(100px);
+body .challenges-form .no-website-checkbox .wpcf7-checkbox .wpcf7-list-item {
+  flex-basis: 100%;
+}
+body .challenges-form .two-column-fields {
+  display: flex;
+  gap: 2rem;
+}
+body .challenges-form label {
+  margin-bottom: -0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: 100%;
+  flex: 1;
+  color: #FF6880;
+}
+body .challenges-form input:not(input[type=submit]), body .challenges-form textarea {
+  width: 100%;
+  font-size: var(--wp--preset--font-size--medium) !important;
+  line-height: 2em;
+  font-family: var(--font-lato);
+  padding: 0.5rem;
+  outline: unset;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  border: 1px solid #dddddd;
+  background-color: #D5E0FF;
+  padding-left: 1.25rem;
+  transition: box-shadow 0.25s ease;
+  transition: all 0.25s ease;
+}
+body .challenges-form input:not(input[type=submit]):focus, body .challenges-form textarea:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #FCFCF8;
+}
+body .challenges-form p input[type=submit] {
+  margin-left: auto;
+  margin-right: 0;
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+  color: #fff;
+  background-color: #FF6880;
+}
+body .challenges-form textarea {
+  padding-top: 1rem;
+  resize: none;
+  margin-bottom: 1rem;
+  max-height: 200px;
+}
+body .challenges-form .wpcf7-checkbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 5.5rem;
+}
+@media screen and (max-width: 1024px) {
+  body .challenges-form .wpcf7-checkbox {
+    flex-direction: column;
+  }
+}
+body .challenges-form .wpcf7-checkbox .wpcf7-list-item {
+  margin: 0;
+  flex-basis: calc(50% - 3.75rem);
+}
+body .challenges-form .wpcf7-checkbox .wpcf7-list-item-label {
+  transition: color 0.5s ease;
+  color: #FAF5E8;
+}
+body .challenges-form .wpcf7-checkbox .wpcf7-list-item input[type=checkbox] {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+body .challenges-form .wpcf7-checkbox .wpcf7-list-item input[type=checkbox]:checked + span.wpcf7-list-item-label {
+  color: #FF6880;
+}
+body .challenges-form .wpcf7-checkbox .wpcf7-list-item input[type=checkbox] + span {
+  padding-left: 2.75rem;
+  display: block;
+  position: relative;
+  top: -2rem;
+}
+body .challenges-form .text-label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
 }
 
 @media (max-width: 768px) {
@@ -87,24 +359,19 @@
   justify-content: space-between;
 }
 
-/*====================
-Service Styles 
-======================*/
 .axil-service {
   margin-top: 60px;
+  position: relative;
+  background: #ffffff;
 }
-
 @media only screen and (max-width: 767px) {
   .axil-service {
     margin-top: 30px;
+    background: #f7f7f7;
   }
 }
-/*---------------------------
-    Single Service  
----------------------------*/
-.axil-service {
-  position: relative;
-  background: #ffffff;
+.axil-service:hover {
+  background: transparent;
 }
 .axil-service:hover::after {
   opacity: 1;
@@ -114,16 +381,49 @@ Service Styles
   display: block;
   width: 100%;
   height: 100%;
-  top: 1.5rem;
-  left: -1.5rem;
+  top: 1rem;
+  left: -1rem;
   border: 4px solid var(--wp--preset--color--contrast);
   position: absolute;
-  opacity: 0;
+  opacity: 0.25;
   z-index: -3;
   transition: opacity 0.2s ease-in-out;
   border-radius: 2px;
   transform: translateZ(-100px);
   filter: blur(0.5px);
+  transition: all 0.1s ease-in-out;
+}
+.axil-service.red-border:hover::after {
+  border-color: rgb(255, 53, 85.1059602649);
+}
+.axil-service.green-border:hover::after {
+  border-color: rgb(57.7327586207, 123.2672413793, 115.4655172414);
+}
+.axil-service.lavender-border:hover::after {
+  border-color: rgb(68.7391304348, 98.8695652174, 252.2608695652);
+}
+.axil-service.indigo-border:hover::after {
+  border-color: rgb(39.9420289855, 39.9420289855, 116.0579710145);
+}
+.axil-service::before {
+  width: 92%;
+  height: 92%;
+  left: -20px;
+  bottom: -20px;
+  background: rgba(0, 2, 72, 0.1);
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transform-style: preserve-3d;
+  transform: rotateY(-10deg);
+  filter: blur(50px);
+  opacity: 1;
+  transition: all 0.7s;
+}
+@media only screen and (max-width: 767px) {
+  .axil-service::before {
+    display: none;
+  }
 }
 .axil-service .icon-container {
   position: absolute;
@@ -161,37 +461,6 @@ Service Styles
 .axil-service.axil-service--blog .inner a.wp-block-post-excerpt__more-link:hover {
   background-color: #35359A;
 }
-
-@media only screen and (max-width: 767px) {
-  .axil-service {
-    background: #f7f7f7;
-  }
-}
-.axil-service:hover {
-  background: transparent;
-}
-
-.axil-service::before {
-  width: 92%;
-  height: 92%;
-  left: -20px;
-  bottom: -20px;
-  background: rgba(0, 2, 72, 0.1);
-  content: "";
-  position: absolute;
-  z-index: -1;
-  transform-style: preserve-3d;
-  transform: rotateY(-10deg);
-  filter: blur(50px);
-  opacity: 1;
-  transition: all 0.7s;
-}
-
-@media only screen and (max-width: 767px) {
-  .axil-service::before {
-    display: none;
-  }
-}
 .axil-service .inner {
   padding-top: 60px;
   padding-left: 40px;
@@ -200,7 +469,6 @@ Service Styles
   position: relative;
   background-color: #ffffff;
 }
-
 @media only screen and (max-width: 767px) {
   .axil-service .inner {
     padding: 30px 20px;
@@ -232,7 +500,6 @@ Service Styles
   opacity: 0;
   transition: all 0.3s;
 }
-
 @media only screen and (max-width: 767px) {
   .axil-service .inner::after {
     background: #f7f7f7;
@@ -256,7 +523,6 @@ Service Styles
   box-shadow: 0 0 1px transparent;
   transition-delay: 0.2s;
 }
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .axil-service .inner::before {
     width: calc(100% - 15px);
@@ -273,10 +539,122 @@ Service Styles
   .axil-service .inner::before {
     width: calc(100% - 15px);
     height: calc(100% - 15px);
+    display: none;
   }
 }
-@media only screen and (max-width: 767px) {
-  .axil-service .inner::before {
+
+.tilt-box.wp-block-group {
+  max-width: 12rem;
+  padding: 1.5rem 1rem;
+  opacity: 0;
+  transform: translateY(100%) scale(0.5);
+  position: relative;
+  transition: all 0.6s ease-in-out;
+  will-change: opacity transform;
+}
+.tilt-box.wp-block-group:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 0.5rem;
+  display: block;
+  box-shadow: 0px 0px 24px rgba(33, 25, 79, 0.1);
+}
+.tilt-box.wp-block-group::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 1rem;
+  left: -1rem;
+  border: 3px solid var(--wp--preset--color--contrast);
+  position: absolute;
+  opacity: 0;
+  z-index: -99;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 2px;
+  transform: translateZ(-100px);
+  filter: blur(0.5px);
+}
+.tilt-box.wp-block-group.red-border:hover::after {
+  border-color: rgb(255, 53, 85.1059602649);
+}
+.tilt-box.wp-block-group.green-border:hover::after {
+  border-color: rgb(57.7327586207, 123.2672413793, 115.4655172414);
+}
+.tilt-box.wp-block-group.lavender-border:hover::after {
+  border-color: rgb(68.7391304348, 98.8695652174, 252.2608695652);
+}
+.tilt-box.wp-block-group.indigo-border:hover::after {
+  border-color: rgb(39.9420289855, 39.9420289855, 116.0579710145);
+}
+.tilt-box.wp-block-group:hover::after {
+  opacity: 1;
+}
+.tilt-box.wp-block-group img {
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+@media only screen and (max-width: 768px) {
+  .tilt-box.wp-block-group > .wp-block-heading.has-small-font-size {
+    font-size: 0.7rem !important;
+  }
+}
+.tilt-box.wp-block-group:hover:before {
+  box-shadow: 0px 0px 24px rgba(33, 25, 79, 0.25);
+}
+.tilt-box.wp-block-group:hover img {
+  transform: scale(1.15);
+}
+
+.wp-block-group.in-view {
+  opacity: 1;
+  transform: translateY(0%) scale(1);
+}
+.wp-block-group.in-view--delay-100 {
+  transition-delay: 0.2s;
+}
+.wp-block-group.in-view--delay-200 {
+  transition-delay: 0.4s;
+}
+.wp-block-group.in-view--delay-300 {
+  transition-delay: 0.6s;
+}
+.wp-block-group.in-view--delay-400 {
+  transition-delay: 0.8s;
+}
+.wp-block-group.in-view--delay-500 {
+  transition-delay: 1s;
+}
+
+.wp-block-group.scale-start {
+  transform: translateY(0%) scale(1.5) rotateX(18deg) rotateY(-14deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transition-delay: 0.25s;
+}
+.wp-block-group.scale-start.in-view {
+  transform: translateY(0%) scale(1) rotateX(-9deg) rotateY(7deg);
+}
+
+/* Utility Classes */
+.hide-on-mobile {
+  display: none;
+}
+
+.show-on-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hide-on-mobile {
+    display: block;
+  }
+  .show-on-mobile {
     display: none;
   }
 }

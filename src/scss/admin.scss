@@ -1,4 +1,16 @@
 /* Your custom CSS here */
+
+
+.wp-block-group{
+    & .inner{
+        background-color:#fff;
+        padding-top: 60px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 60px;
+    }
+}
+
 .block-editor-block-list__layout .wp-block-group.stack3d{
     border: 1px solid red !important;     
     height: 100%;        
@@ -34,4 +46,10 @@
 
 .block-editor-block-list__layout .wp-block-group.stack3d .axil-icon-box + .axil-icon-box + .axil-icon-box {
     top: 70%;
+}
+
+
+.tilt-box{
+    background-color: #fff;
+    padding: 1rem;
 }
