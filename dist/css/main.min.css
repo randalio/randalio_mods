@@ -313,19 +313,23 @@ body .challenges-form textarea {
 }
 body .challenges-form .wpcf7-checkbox {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   column-gap: 5.5rem;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
   body .challenges-form .wpcf7-checkbox {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 body .challenges-form .wpcf7-checkbox .wpcf7-list-item {
   margin: 0;
-  flex-basis: calc(50% - 3.75rem);
+}
+@media screen and (min-width: 1024px) {
+  body .challenges-form .wpcf7-checkbox .wpcf7-list-item {
+    flex-basis: calc(50% - 3.75rem);
+  }
 }
 body .challenges-form .wpcf7-checkbox .wpcf7-list-item-label {
   transition: color 0.5s ease;

@@ -62,15 +62,15 @@ class RandalIO_Mods_Main_JS {
         const scroll = new LocomotiveScroll({
             el: document.querySelector('[data-scroll-container]'), // Target element for scrolling
             smooth: true, // Enable smooth scrolling
-            lerp: 0.15, // Linear interpolation value - controls smoothness/responsiveness
-            multiplier: 0.8, // Adjust scroll speed
+            lerp: 0.5, // Linear interpolation value - controls smoothness/responsiveness
+            multiplier: 0.9, // Adjust scroll speed
             scrollFromAnywhere: true, // Allow scrolling to start from any point
             smartphone: {
-                smooth: true, // Enable smooth scrolling on smartphones
+                smooth: false, // Enable smooth scrolling on smartphones
                 multiplier: 1 // Default scroll speed for smartphones
             },
             tablet: {
-                smooth: true, // Enable smooth scrolling on tablets
+                smooth: false, // Enable smooth scrolling on tablets
                 multiplier: 1 // Default scroll speed for tablets
             }
         });
