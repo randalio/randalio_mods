@@ -257,6 +257,11 @@ body .challenges-form .wpcf7-checkbox .wpcf7-list-item-label {
   transition: color 0.5s ease;
   color: #FAF5E8;
 }
+@media screen and (max-width: 1024px) {
+  body .challenges-form .wpcf7-checkbox .wpcf7-list-item-label {
+    font-size: 1.25rem;
+  }
+}
 body .challenges-form .wpcf7-checkbox .wpcf7-list-item input[type=checkbox] {
   width: 1.5rem;
   height: 1.5rem;

@@ -331,6 +331,10 @@ body .challenges-form{
       &-label{
         transition: color 0.5s ease;
         color: #FAF5E8;
+
+        @media screen and (max-width: 1024px){
+         font-size: 1.25rem;
+        }
       }
 
       & input[type="checkbox"]{
