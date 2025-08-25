@@ -1,6 +1,6 @@
 // import vanilla tilt
 import 'vanilla-tilt';
-import LocomotiveScroll from 'locomotive-scroll';
+//import LocomotiveScroll from 'locomotive-scroll';
 
 class RandalIO_Mods_Main_JS {
 
@@ -16,12 +16,9 @@ class RandalIO_Mods_Main_JS {
           this.initSwitcher();
 
             window.addEventListener('load', () => {
-                setTimeout(() => {
-                    this.initLocoScroll();
-                }, 500); // Delay to ensure all elements are loaded
-                
-            }
-            );
+                // After all resources including images are loaded
+               
+            });
         
 
         });
@@ -56,25 +53,6 @@ class RandalIO_Mods_Main_JS {
       });
 
     } // initSwitcher
-
-
-    initLocoScroll(){
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector('[data-scroll-container]'), // Target element for scrolling
-            smooth: true, // Enable smooth scrolling
-            lerp: 0.5, // Linear interpolation value - controls smoothness/responsiveness
-            multiplier: 0.9, // Adjust scroll speed
-            scrollFromAnywhere: true, // Allow scrolling to start from any point
-            smartphone: {
-                smooth: false, // Enable smooth scrolling on smartphones
-                multiplier: 1 // Default scroll speed for smartphones
-            },
-            tablet: {
-                smooth: false, // Enable smooth scrolling on tablets
-                multiplier: 1 // Default scroll speed for tablets
-            }
-        });
-    }
 
 
 
