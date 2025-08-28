@@ -180,6 +180,9 @@ fieldset.fieldset-cf7mls .wpcf7-spinner {
 body .challenges-form p:empty {
   display: none;
 }
+body .challenges-form p {
+  margin-block-start: 0 !important;
+}
 body .challenges-form.is-layout-constrained {
   max-width: unset;
 }
@@ -588,6 +591,59 @@ body .challenges-form .text-label {
   .show-on-mobile {
     display: none;
   }
+}
+/* Default in-view styles */
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom animation classes */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+.fade-in.fade-in {
+  opacity: 1;
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-up.animate-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.7s ease-out;
+}
+
+.slide-left.slide-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.bounce-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounce-in.bounce-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-scroll-speed] {
+  will-change: transform;
+  transition: transform 0.1s ease;
 }
 
 /*# sourceMappingURL=main.min.css.map*/
