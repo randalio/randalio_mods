@@ -792,7 +792,7 @@ body .challenges-form{
 [data-scroll-class="animate-up"].animate-up {
   opacity: 1;
   transform: translateY(0);
-  transition: all 1s ease !important;
+  transition: all 0.75s ease !important;
 }
 
 [data-scroll-class="slide-left"] {
@@ -815,3 +815,18 @@ body .challenges-form{
 
 
 
+
+
+
+
+
+.hero-vertical-video.wp-block-video{
+  position: absolute;
+    width: 519px;
+    height: auto;
+    top: 55px;
+    left: 0px;
+    transform: perspective(3000px) rotateX(16deg) rotateY(-43deg) rotateZ(12deg) scale(1);
+    border-radius: 4rem;
+    overflow: hidden;
+} 

@@ -60,7 +60,7 @@ class RandalIO_Mods_Main_JS {
 
                 const options = {
                     rootMargin: '50px 0px',
-                    threshold: [0, 0.66]
+                    threshold: [0, 0.75]
                 }
 
                 observer = new IntersectionObserver((entries) => {
