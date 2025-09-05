@@ -645,11 +645,12 @@ body .challenges-form .text-label {
   position: absolute;
   width: 519px;
   height: auto;
-  top: 55px;
+  top: 30px;
   left: 0px;
   transform: perspective(3000px) rotateX(16deg) rotateY(-43deg) rotateZ(12deg) scale(1);
   border-radius: 4rem;
   overflow: hidden;
+  z-index: 0;
 }
 
 /*# sourceMappingURL=main.min.css.map*/
