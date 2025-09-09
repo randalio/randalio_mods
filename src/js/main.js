@@ -60,7 +60,7 @@ class RandalIO_Mods_Main_JS {
 
                 const options = {
                     rootMargin: '50px 0px',
-                    threshold: [0, 0.95]
+                    threshold: [0, 1]
                 }
 
                 observer = new IntersectionObserver((entries) => {
@@ -198,7 +198,7 @@ class RandalIO_Mods_Main_JS {
                 if (targetEl) {
                     lenis.scrollTo(targetEl, {
                         offset: -100,
-                        duration: 1.2,
+                        duration: 1.6,
                         easing: (t) => 1 - Math.pow(1 - t, 3),
                         onComplete: () => {
                             history.replaceState(null, null, targetId)
@@ -216,7 +216,7 @@ class RandalIO_Mods_Main_JS {
                         const scrollToHash = () => {
                             lenis.scrollTo(targetEl, {
                                 offset: -100,
-                                duration: 1.2,
+                                duration: 1.6,
                                 easing: (t) => 1 - Math.pow(1 - t, 3),
                                 onComplete: () => {
                                     history.replaceState(null, null, 

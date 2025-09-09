@@ -282,8 +282,8 @@ body .challenges-form{
     outline: unset;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 1rem;
-    border: 1px solid #dddddd;
-    background-color: #D5E0FF;
+    border: 1px solid var(--wp--preset--color--contrast);
+    background-color: #fff;
     padding-left: 1.25rem;
     transition: box-shadow 0.25s ease;
     transition: all 0.25s ease;
@@ -300,7 +300,12 @@ body .challenges-form{
     padding-left: 4rem !important;
     padding-right: 4rem !important;
     color: #fff;
-    background-color: #FF6880;
+    background-color: var(--wp--preset--color--accent-5);
+    border-radius: 20px !important;
+
+    &:hover{
+      background-color: var(--wp--preset--color--accent-3);
+    }
   }
 
   & textarea{
@@ -335,7 +340,7 @@ body .challenges-form{
 
       &-label{
         transition: color 0.5s ease;
-        color: #FAF5E8;
+        //color: #FAF5E8;
 
         @media screen and (max-width: 1024px){
          font-size: 1.25rem;
