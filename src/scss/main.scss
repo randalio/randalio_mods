@@ -378,6 +378,158 @@ body .challenges-form{
 }
 
 
+body .partners-form{
+
+  & p:empty{
+    display: none;
+  }
+
+  & p{
+    margin-block-start: 0 !important;
+    //margin-block-end: 0 !important;
+  }
+
+  &.is-layout-constrained{
+    max-width: unset;
+
+    & > *{
+      max-width: unset;
+    }
+  }
+
+  .no-website-checkbox{
+    & .wpcf7-checkbox .wpcf7-list-item{
+      flex-basis: 100%;
+    }
+  }
+
+  .two-column-fields{
+    display: flex;
+    gap: 2rem;
+  }
+
+  & label{
+    margin-bottom: -0.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    width: 100%;
+    flex: 1;
+    //color: #FF6880;
+
+  }
+
+  & input:not(input[type="submit"]),
+  & textarea,
+  & select{
+    width: 100%;
+    font-size: var(--wp--preset--font-size--medium) !important;
+    line-height: 2em;
+    font-family: var(--font-lato);
+    padding: 0.5rem;
+    outline: unset;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    border: 1px solid var(--wp--preset--color--contrast);
+    background-color: #fff;
+    padding-left: 1.25rem;
+    transition: box-shadow 0.25s ease;
+    transition: all 0.25s ease;
+
+    &:focus{
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      background-color: #FCFCF8;
+    }
+  }
+
+  & select{
+    height: 4rem;
+  }
+
+  & p input[type="submit"]{
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+    color: #fff;
+    background-color: var(--wp--preset--color--accent-5);
+    border-radius: 20px !important;
+
+    &:hover{
+      background-color: var(--wp--preset--color--accent-3);
+    }
+  }
+
+  & textarea{
+    padding-top: 1rem;
+    resize: none;
+    margin-bottom: 1rem;
+    max-height: 200px;
+  }
+
+
+
+
+  & .wpcf7-checkbox{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    //column-gap: 0.6rem;
+
+
+    @media screen and (min-width: 1024px){
+      flex-direction: row;
+    }
+
+    & .wpcf7-list-item{
+      margin: 0;
+      
+
+      @media screen and (min-width: 1024px){
+        flex-basis: 33.33%; // calc(33.33% - 0.6rem);
+      }
+
+      &-label{
+        transition: color 0.5s ease;
+        font-size: 1rem;
+        //color: #FAF5E8;
+
+        @media screen and (max-width: 1024px){
+         font-size: 1.25rem;
+        }
+      }
+
+      & input[type="checkbox"]{
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+        
+
+        &:checked + span.wpcf7-list-item-label{
+          color:  #FF6880;
+        }
+
+        & + span{
+          padding-left: 2.75rem;
+          display: block;
+          position: relative;
+          top: -1.66rem;
+        }
+
+      }
+
+    }
+  }
+
+  & .text-label{
+    display: inline-block;
+    margin-bottom: 0.75rem;
+
+  }
+
+}
+
+
 
 
 
